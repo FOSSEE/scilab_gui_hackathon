@@ -1,1 +1,3 @@
-# scilab_case_study_hackathon
+
+# scilab_gui_hackathon
+
