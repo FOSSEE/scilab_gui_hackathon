@@ -185,7 +185,7 @@ const organizers = [
           {themes.map((theme) => (
             <article class="modern-card">
               <h2 class="subsection-title font-bold text-lg">{theme.name}</h2>
-              <p class="mt-2 text-justify">{theme.description}</p>
+              <p class="mt-2 text-justify text-base">{theme.description}</p>
             </article>
           ))}
         </div>
@@ -298,7 +298,7 @@ const organizers = [
         <div class="overflow-x-auto">
           <table class="modern-table text-left">
             <thead>
-              <tr class="bg-gray-200">
+              <tr class="">
                 <th class="border border-gray-300 px-4 py-2">Prize Category</th>
                 <th class="border border-gray-300 px-4 py-2">Prize Amount</th>
               </tr>
@@ -327,14 +327,16 @@ const organizers = [
             </a>
           ))}
         </div>
+        <div class="mt-10">
         <h1 class="section-title text-center">Contact Us</h1>
         <p class="text-center text-xl">
           For more information, email us at
           <a href="mailto:contact@scilab.in" class="modern-link hover:underline">contact@scilab.in</a>
         </p>
+        </div>
       </div>
     </section>
-  </main>
+  </main> 
 </div>
 
 <style>
