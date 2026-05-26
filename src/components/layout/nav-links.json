@@ -1,10 +1,1 @@
-[
-  { "label": "About", "href": "/#about" },
-  { "label": "Dates", "href": "/#date" },
-  { "label": "Themes", "href": "/problem-statement" },
-  { "label": "Register", "href": "/#register" },
-  { "label": "Evaluation", "href": "/evaluation" },
-  { "label": "Resources", "href": "/resources" },
-  { "label": "Rewards", "href": "/#rewards" },
-  { "label": "Contact", "href": "/#contact" }
-]
+
