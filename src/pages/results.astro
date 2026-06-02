@@ -1,0 +1,309 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<div class="curtain left-curtain"></div>
+  <div class="curtain right-curtain"></div>
+ 
+
+   <div class="page-content hidden" id="main-content">
+<Layout title="Scilab Case Study Hackathon" >
+
+ 
+   
+<h1 class="text-center section-title pl-4" id="results">Results</h1>
+<!--<h1>The Hackathon is still ongoing</h1>-->
+<div class="tabs mt-10">
+  <div class="tab active" data-tab="0">Winners</div>
+  <div class="tab" data-tab="1">Consolation Prize Winners</div>
+<div class="tab" data-tab="2">Good submissions</div>
+
+</div>
+<div class="tab-content mb-16">
+  <div class="tab-panel active" id="tab-0">
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Case Study Title</th>
+<th>Participant's Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1st Prize</td>
+<td>Mathematical modelling and simulation of diesel engine thermodynamics</td>
+<td>Koustav Bhattacharjee</td>
+<td>This case study involves creating a diesel engine simulation model using Scilab and Xcos. It includes engine processes like combustion, heat transfer, valve dynamics, and performance calculations. The person built a visual and editable model to test different engine conditions. The goal is to optimize engine performance without physical testing.</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>2nd Prize</div>
+</td>
+<td>Unmanned aerial vehicle (UAV) - based wireless communication system</td>
+<td>Dr Deepan Nagarajan</td>
+<td>This case study focuses on simulating a UAV-based wireless communication system using Scilab. It analyzes how a UAV&rsquo;s altitude affects signal coverage, power loss, and energy efficiency. A mathematical model is used to find the optimal height for best performance. Simulations help visualize how different altitudes impact coverage and energy use. The goal is to guide efficient UAV placement for better communication networks.</td>
+</tr>
+<tr>
+<td>SIMPLE</td>
+<td>Pranjali Digambar Main</td>
+<td>This project develops a 2D CFD solver in Scilab using the Finite Volume Method and SIMPLE (Semi-Implicit Method for Pressure-Linked Equations) algorithm to simulate incompressible, laminar flow in a channel. It uses central differencing for diffusion and upwind schemes for convection.</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>3rd Prize</div>
+</td>
+<td>Smart traffic light control system</td>
+<td>Krishendu Roy</td>
+<td>This case study presents a Smart Traffic Light Control System using image processing to adjust signal timings based on real-time traffic. It uses Canny Edge Detection to detect traffic density and improve pedestrian safety. The system replaces hardware sensors with cameras, offering a cost-effective and adaptive solution. It enhances traffic flow and reduces wait times at crossings.</td>
+</tr>
+<tr>
+<td>Optimisation in Scilab using the gradient descent algorithm</td>
+<td>Naini Diwan</td>
+<td>This case study focuses on the Gradient Descent Algorithm (GDA), a method used to minimize the cost function in optimization problems. By iteratively updating parameters based on the gradient, it reduces error and improves model accuracy. The approach demonstrates how adjusting learning rate and iterations helps the algorithm converge to an optimal solution.</td>
+</tr>
+</tbody>
+</table>
+</div>
+ <div class="tab-panel" id="tab-1">
+
+<table>
+<thead>
+<tr>
+<th>Case Study Title</th>
+<th>Participant's Name</th>
+<th>Description</th>
+</tr>
+  </thead>
+  <tbody>
+<tr>
+<td>Minimum length rocket nozzle design using method of characteristic</td>
+<td>Ishar Singh Saini</td>
+<td>This study focuses on designing a rocket nozzle that gives smooth and fast gas flow using a short and efficient shape. It uses the Method of Characteristics in Scilab to calculate the nozzle shape. The goal is to get high-speed flow with less energy loss. This method helps design better nozzles without heavy simulations.</td>
+</tr>
+<tr>
+<td>Solving lid driven cavity flow using the lattice Boltzmann method in Scilab</td>
+<td>Dr Pravinraj T</td>
+<td>This study uses Scilab to simulate 2D lid-driven cavity flow using the Lattice Boltzmann Method (LBM). It applies the D2Q9 model to study how fluid moves when the top lid of a square cavity slides. The results matched known benchmarks, showing that Scilab is a good tool for simple and accurate fluid flow simulations.</td>
+</tr>
+<tr>
+<td>Automated product surface defect inspection using Scilab</td>
+<td>Ayush Warsh</td>
+<td>This case study shows how Scilab can be used to find surface defects on products automatically. It captures an image, turns it to grayscale, resizes it, and uses a histogram to detect any flaws. This makes quality checks faster, more accurate, and helps improve product quality.</td>
+</tr>
+<tr>
+<td>Dynamic gain-scheduled adaptive cruise control using Scilab</td>
+<td>Keerti Madhuvantika A</td>
+<td>This project uses Scilab to build an Adaptive Cruise Control (ACC) system that adjusts a vehicle&rsquo;s speed and distance based on traffic. A gain-scheduling PD controller adapts to changes in vehicle weight and road conditions. The system switches between maintaining a steady speed and keeping a safe distance from other cars. Simulations show smooth control, better safety, and reliable performance in real-world scenarios.</td>
+</tr>
+<tr>
+<td>Enhanced brain tumor detection in MRI using Scilab</td>
+<td>Pranay Kumar Pandey</td>
+<td>This study focuses on brain tumor detection using MRI images with Scilab. It highlights improved segmentation and classification accuracy for medical diagnostics. The system offers enhanced detection performance, visual clarity, and computational efficiency.The system includes a user-friendly GUI for visualization.</td>
+</tr>
+<tr>
+<td>Measuring the quality of hand and surface grinding using Scilab image processing tools</td>
+<td>Mitalee Mishra</td>
+<td>This study examines the quality of hand and surface grinding on steel by comparing lab-prepared samples with high-quality reference images. It uses image analysis to identify surface defects and calculate similarity percentages. This provides an approach to improving quality checks in manufacturing.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tab-panel" id="tab-2">
+<table>
+<thead>
+<tr>
+<th>Case Study Title</th>
+<th>Participant's Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voltage stability estimation of electric power system using l-index</td>
+<td>Mohamed Niyash S</td>
+<td>This study focuses on evaluating voltage stability in a 6-bus power system under static loading conditions. It uses the L-index method to identify buses prone to voltage instability.</td>
+</tr>
+<tr>
+<td>Performance analysis of solar photovoltaic systems using computational modeling</td>
+<td>Jaspreet Singh</td>
+<td>This study focuses on analyzing the performance of solar photovoltaic (PV) systems using a single-diode model. It uses Scilab-based computational modeling and the Newton-Raphson method to simulate I-V and P-V characteristics under varying irradiance and temperature conditions.</td>
+</tr>
+<tr>
+<td>Optimization of renewable energy systems using Scilab</td>
+<td>Surya Raja</td>
+<td>This project focuses on optimizing a hybrid renewable energy system combining solar, wind, and battery storage. The goal is to find the best setup that keeps costs low and provides steady electricity. Scilab is used to model, simulate, and optimize the system.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<div class="text-lg"><mark>Note: A certificate of appreciation will be given to all the Good submissions.</mark></div>
+</div>
+
+</div>
+ 
+
+</Layout>
+</div>
+<style>
+.hidden {
+  display: none;
+}
+    table{
+        box-shadow: none;
+        background-color: white;
+        transition: 0.3s;
+    }
+
+    table:hover{
+        
+        box-shadow: 0px 5px 58px 0px rgba(36, 80, 80, 0.7);
+     
+        /* scale: 1.1; */
+    }
+a {
+  /* background:; */
+  color: rgb(255, 0, 149);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+}
+
+a:hover {
+  background-color: #ff5e00;
+  text-decoration:underline;
+  color: white;
+  
+}
+
+a:active {
+  background-color: rgb(255, 0, 0);
+  
+}
+
+/* a:visited {
+  background-color: #9dff6f;
+} */
+tr, th,td{
+    border: 2px solid rgb(255, 0, 85);
+    padding: 5px;
+}
+.tabs {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background: #f1f1f1;
+  }
+  .tab:hover {
+    background: #f36262;
+  }
+
+  .tab.active {
+    background: #fc0000;
+    color:white;
+    font-weight: bold;
+  }
+
+  .tab-content {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #fff;
+  }
+
+  .tab-content > div {
+    display: none;
+  }
+
+  .tab-content > div.active {
+    display: block;
+  }
+
+ .curtain {
+      position: fixed;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 10;
+      transition: transform 4.5s ease-in-out;
+    }
+
+    .left-curtain {
+      left: 0;
+      background-image: url(../assets/img/curtn-left.png); /* replace with your curtain img */
+      transform: translateX(0%);
+    }
+
+    .right-curtain {
+      right: 0;
+      background-image: url(../assets/img/curtn-left.png); /* same image for example */
+      transform: translateX(0%);
+    }
+
+    .open-left {
+      transform: translateX(-100%);
+    }
+
+    .open-right {
+      transform: translateX(100%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      top: 40%;
+      font-size: 2rem;
+    }
+  </style>
+
+
+  <script>
+ window.addEventListener('load', () => {
+  const leftCurtain = document.querySelector('.left-curtain');
+  const rightCurtain = document.querySelector('.right-curtain');
+  const content = document.getElementById('main-content');
+
+  if (leftCurtain && rightCurtain && content) {
+    leftCurtain.classList.add('open-left');
+    rightCurtain.classList.add('open-right');
+
+    // Show the content after the curtain animation (4.5s)
+    setTimeout(() => {
+      content.classList.remove('hidden');
+    }, 500);
+  }
+});
+
+  
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const activeTab = document.querySelector('.tab.active');
+      const activePanel = document.querySelector('.tab-panel.active');
+
+      if (activeTab) {
+        activeTab.classList.remove('active');
+      }
+
+      if (activePanel) {
+        activePanel.classList.remove('active');
+      }
+
+      tab.classList.add('active');
+      const tabIndex = tab.getAttribute('data-tab');
+      const targetPanel = document.getElementById(`tab-${tabIndex}`);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,59 @@
+---
+import'../assets/css/custom.css';
+interface Props {
+	title: string;
+}
+import Nav from '../components/layout/Nav.astro';
+
+
+import Footer from '../components/layout/Footer.astro';
+const { title } = Astro.props;
+
+---
+
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+	 <meta name="description" content="Scilab GUI Hackathon by FOSSEE">
+   <meta name="author" content="FOSSEE web team">
+   <meta name="keywords" content="Scilab GUI Hackathon, Scilab Hackathon, Hackathon, coding, competition, India Hackathon, National Hackathon, All India Hackathon, Coding competition, Scilab GUI, GUI application">
+   <meta name="keywords"
+      content="Scilab, Open source, software, Case study">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" class="bg-red-500" href="https://scilab.in/sites/default/files/favicon.png" />
+    <script is:inline>
+      try {
+        const sectionTheme = localStorage.getItem("section-theme");
+        document.documentElement.dataset.sectionTheme = sectionTheme === "light" ? "light" : "dark";
+      } catch {
+        document.documentElement.dataset.sectionTheme = "dark";
+      }
+    </script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+		<meta name="generator" content={Astro.generator} />
+
+<!-- Google tag (gtag.js) -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-SHVQ71PNBD"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-SHVQ71PNBD");
+</script>
+
+		<title>{title}</title>
+	</head>
+	<body>
+    <Nav />
+    <div class="w-full block">
+      <slot />
+    </div>
+      <Footer />
+	</body>
+</html>

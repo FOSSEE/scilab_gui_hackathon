@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const themes = [
+  {
+    name: "Interactive STEM Education",
+    description:
+      "Build an app that helps users learn mathematics, physics, electronics, or engineering concepts through interactive visual explanations.",
+  },
+  {
+    name: "Data Visualization Dashboards",
+    description:
+      "Create GUI apps that load CSV data, perform statistics, and display results with interactive plots.",
+  },
+  {
+    name: "Finance & Business Calculators",
+    description:
+      "Develop practical financial tools that perform calculations, compare scenarios, analyze trends, and support informed decisions through intuitive GUI interfaces.",
+  },
+  {
+    name: "Science & Engineering Simulators",
+    description:
+      "Simulate real-world scientific or engineering systems where users can modify parameters and observe dynamic system behavior in real time.",
+  },
+  {
+    name: "Utility & Productivity Apps",
+    description: "Create general-purpose tools that save time or simplify complex operations.",
+  },
+];
+
+const encouragedItems = [
+  "Original UI design",
+  "Educational usefulness",
+  "Scientific visualization",
+  "Interactive problem-solving applications",
+  "Creativity and innovation using Scilab GUI tools",
+];
+
+const discouragedItems = [
+  "Directly copied applications from tutorials",
+  "Basic calculators or plotting examples without innovation",
+  "Applications with minimal GUI interaction",
+];
+---
+
+<Layout title="Scilab GUI Hackathon Themes">
+  <section class="md:px-4 pb-8">
+    <div class="md:px-20 px-3">
+      <h1 class="text-center section-title mx-4 mb-5" id="problem-statement">
+        Themes
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {themes.map((theme) => (
+          <article class="bg-gray-100 p-5 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-xl font-semibold text-[#0a4850]">{theme.name}</h2>
+            <p class="mt-2 text-justify">{theme.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="md:px-4 pb-8 bg-gray-50">
+    <div class="md:px-20 px-3">
+      <h1 class="text-center section-title mx-4 mb-5">Important Note</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h2 class="font-bold text-lg mb-2 text-[#0a4850]">Participants are encouraged to focus on</h2>
+          <ul class="list-disc list-outside pl-5 space-y-1">
+            {encouragedItems.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-bold text-lg mb-2 text-[#0a4850]">The following are discouraged</h2>
+          <ul class="list-disc list-outside pl-5 space-y-1">
+            {discouragedItems.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </div>
+      <p class="mt-5 text-justify">
+        The Spoken Tutorials already cover introductory calculator and plotting examples. Participants are encouraged to creatively extend these concepts and develop original applications.
+      </p>
+    </div>
+  </section>
+</Layout>

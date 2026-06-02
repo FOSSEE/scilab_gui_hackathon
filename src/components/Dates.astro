@@ -1,0 +1,86 @@
+---
+const dateContent = [
+{ name: "Registration Opens", description: "21st Oct 2024" },
+  { name: "Workshop", description: "15-16 Nov 2024" },
+  { name: "Problem Statement Announcement", description: "16th Nov 2024" },
+  { name: "Submission Deadline", description: "20th Dec 2024" },
+  { name: "Result Declaration", description: "3rd Jan 2024" },
+  { name: "Internship Begins", description: "6th Jan 2024" }
+]
+
+---
+
+<div class="md:text-center text-center items-center mb-5 md:mx-4 xl:px-4">
+    <div class="text-xl">
+    <h1 class="section-title"><span class="banner">Important Dates</span></h1>
+</div>
+<div class="bg-[#0a4850] text-white 2xl:rounded-full rounded-2xl py-3">
+  <div class="flex justify-center items-center">
+    <div class=" text-left">
+                
+                      
+                      <table>
+    {
+       dateContent.map(date => (
+      
+                        <tr class="md:text-left md:text-xl"><td class="pr-3 border-b-2">{date.name}  </td><td class="text-yellow-200 border-b-2"><strong>{date.description}</strong></td></tr>
+                    
+                     
+                      
+         
+        ))
+    }  </table>
+      </div></div>
+   <ul class="">
+     {/* <span class="string"></span> : <span class="number md:text-2xl"></span> */}
+    <li class="md:text-left md:text-xl">
+    </li>
+                 
+  </ul>
+  </div>
+    
+    </div>
+    <style>
+.typewriter{
+ 
+  /* font-family: monospace; */
+  overflow: hidden; 
+  border-right: .15em solid orange; 
+  white-space: nowrap;
+  width: 100%;
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+   /*letter-spacing: ; Adjust as needed */
+  animation: 
+    typing 2s steps(16,end),
+    blink-caret .4s step-end infinite alternate;
+    cursor: wait;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+.banner{
+  border-left: 23px solid #0a4850;
+  border-right: 23px solid #0a4850;
+ border-bottom:23px solid #0a4850;
+}
+
+@media  (max-width:456px) {
+  .banner{
+  border-left: 0px solid #0a4850;
+  border-right: 0px solid #0a4850;
+  border-bottom:0px solid #0a4850;
+}
+}
+/* .section-title table tr { }
+
+} */
+    </style>

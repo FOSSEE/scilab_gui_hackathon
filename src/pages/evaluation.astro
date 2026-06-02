@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const evaluationCriteria = [
+  "GUI design and interactivity",
+  "Problem relevance and innovation",
+  "Functionality and correctness",
+  "Use of Scilab GUI components and concepts",
+  "Code readability and structure",
+  "Documentation quality",
+  "Creativity and overall implementation quality",
+];
+---
+
+<Layout title="Scilab GUI Hackathon Evaluation Criteria">
+  <section class="md:px-4 pb-8">
+    <div class="md:px-20 px-3">
+      <h1 class="text-center section-title pl-4" id="evaluation">Evaluation Criteria</h1>
+      <ul class="list-disc list-inside space-y-2 pt-4">
+        {evaluationCriteria.map((criterion) => <li>{criterion}</li>)}
+      </ul>
+      <p class="mt-4">
+        Many other criteria may also be considered during the evaluation process.
+      </p>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,59 @@
+---
+const faqContent = [
+  {
+    question: "What is the Scilab GUI Hackathon?",
+    answer:
+      "The Scilab GUI Hackathon encourages participants to transform static Scilab scripts into interactive and user-friendly GUI applications.",
+  },
+  {
+    question: "Who can participate?",
+    answer:
+      "Students, researchers, educators, and professionals with a basic understanding of programming and computational tools can participate. Team participation is not allowed.",
+  },
+  {
+    question: "What should participants build?",
+    answer:
+      "Participants should build original GUI-based Scilab applications focused on interactivity, educational usefulness, scientific visualization, or practical problem solving.",
+  },
+  {
+    question: "What must be submitted?",
+    answer:
+      "Participants must submit source code, README/documentation, a short demo video, problem statement, GUI screenshots, and sample outputs or results.",
+  },
+  {
+    question: "What are the evaluation criteria?",
+    answer:
+      "Submissions will be evaluated on GUI design, interactivity, relevance, innovation, correctness, use of Scilab GUI components, code readability, documentation, creativity, and overall implementation quality.",
+  },
+  {
+    question: "Can I copy an application from a tutorial?",
+    answer:
+      "No. Directly copied applications from tutorials, basic calculators without innovation, and applications with minimal GUI interaction are discouraged.",
+  },
+  {
+    question: "How many GUI components must be used?",
+    answer: "The application must use at least three distinct GUI components.",
+  },
+  {
+    question: "Where can I learn Scilab GUI?",
+    answer:
+      "Use the GUI in Scilab Spoken Tutorial series linked on the Resources page.",
+  },
+];
+---
+
+<div class="cursor-help mt-10" id="faq">
+  <h1 class="text-5xl font-bold items-center section-title text-center">Frequently Asked Questions (FAQ)</h1>
+
+  <div class="border-2 border-l-8 rounded-lg h-[60vh] border-[#ffe600] p-2 m-2 hover:shadow-indigo-300 shadow-lg overflow-y-scroll">
+    {faqContent.map((faq, index) => (
+      <div class="my-5 mx-3">
+        <h4 class="font-bold">{index + 1}. {faq.question}</h4>
+        <p>
+          <span class="font-semibold">Answer: </span>
+          {faq.answer}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,349 @@
+---
+import Hero from "./Hero.astro";
+import iitb from "../assets/img/IITB.png";
+import fossee from "../assets/img/FOSSEE.png";
+import st from "../assets/img/spoken.png";
+import Nmeict from "../assets/img/NMEICT -logo.png";
+import Moe from "../assets/img/MOE-logo.png";
+
+const importantDates = [
+  { event: "Registration Opens", date: "01 June 2026" },
+  { event: "Hackathon Start Date", date: "01 July 2026" },
+  { event: "Submission Deadline", date: "31 July 2026" },
+  { event: "Results Announcement", date: "24 August 2026 (Tentative)" },
+];
+
+const themes = [
+  {
+    name: "Interactive STEM Education",
+    description:
+      "Build an app that helps users learn mathematics, physics, electronics, or engineering concepts through interactive visual explanations.",
+  },
+  {
+    name: "Data Visualization Dashboards",
+    description:
+      "Create GUI apps that load CSV data, perform statistics, and display results with interactive plots.",
+  },
+  {
+    name: "Finance & Business Calculators",
+    description:
+      "Develop practical financial tools that perform calculations, compare scenarios, analyze trends, and support informed decisions through intuitive GUI interfaces.",
+  },
+  {
+    name: "Science & Engineering Simulators",
+    description:
+      "Simulate real-world scientific or engineering systems where users can modify parameters and observe dynamic system behavior in real time.",
+  },
+  {
+    name: "Utility & Productivity Apps",
+    description: "Create general-purpose tools that save time or simplify complex operations.",
+  },
+];
+
+const encouragedItems = [
+  "Original UI design",
+  "Educational usefulness",
+  "Scientific visualization",
+  "Interactive problem-solving applications",
+  "Creativity and innovation using Scilab GUI tools",
+];
+
+const discouragedItems = [
+  "Directly copied applications from tutorials",
+  "Basic calculators or plotting examples without innovation",
+  "Applications with minimal GUI interaction",
+];
+
+const deliverables = [
+  "Source code",
+  "README/documentation",
+  "Short demo video (less than 2 minutes)",
+  "Problem statement",
+  "GUI screenshots",
+  "Sample outputs/results",
+];
+
+const evaluationCriteria = [
+  "GUI design and interactivity",
+  "Problem relevance and innovation",
+  "Functionality and correctness",
+  "Use of Scilab GUI components and concepts",
+  "Code readability and structure",
+  "Documentation quality",
+  "Creativity and overall implementation quality",
+];
+
+const eligibility = [
+  "Open only to individual participants (team participation is not allowed).",
+  "Students, researchers, educators, and professionals passionate about numerical computation and application development",
+  "Basic understanding of programming and computational tools.",
+];
+
+const participationSteps = [
+  {
+    step: "Step 1",
+    description: "Register through the official Google Form. The link will be added soon.",
+  },
+  {
+    step: "Step 2",
+    description: "Explore the Scilab GUI Spoken Tutorials and select a project idea.",
+    link: "https://spoken-tutorial.org/tutorial-search/?search_foss=GUI+in+Scilab&search_language=English",
+  },
+  {
+    step: "Step 3",
+    description: "Develop the GUI application using Scilab.",
+  },
+  {
+    step: "Step 4",
+    description:
+      "Upload the final project with all required deliverables to your drive link and keep access open.",
+  },
+  {
+    step: "Step 5",
+    description: "Submit before the deadline.",
+  },
+];
+
+const rules = [
+  "The application must use at least three distinct GUI components.",
+  "All submitted source code must be original. Plagiarism or direct copying from online Scilab repositories will lead to disqualification.",
+  "The same participant cannot submit multiple entries.",
+  "All approved and completed submissions will be published as open-source projects.",
+  "Any participant found engaging in malpractice or unfair means will be immediately disqualified.",
+  "The decision of the review committee and organizers will be final and binding. No queries regarding the results will be entertained.",
+];
+
+const benefits = [
+  "Free registration and open participation",
+  "Hands-on experience in developing GUI applications using Scilab",
+  "Cash prizes for top-performing projects",
+  "e-Certificates for selected submissions",
+  "Recognition for outstanding projects on the FOSSEE, IIT Bombay - Scilab website",
+  "Internship opportunities may be offered with FOSSEE, IIT Bombay for exceptional participants",
+];
+
+const rewards = [
+  { category: "First Prize", amount: "Rs. 10,000" },
+  { category: "Second Prize", amount: "Rs. 5,000" },
+  { category: "Third Prize", amount: "Rs. 3,500" },
+  { category: "Consolation Prize", amount: "Rs. 2,500" },
+];
+
+const organizers = [
+  { name: "IIT Bombay", href: "https://www.iitb.ac.in/", image: iitb },
+  { name: "FOSSEE", href: "https://fossee.in/", image: fossee },
+  { name: "Spoken Tutorial", href: "https://spoken-tutorial.org/", image: st },
+  { name: "Ministry of Education", href: "https://www.education.gov.in/", image: Moe },
+  { name: "NMEICT", href: "https://www.education.gov.in/ict-initiatives", image: Nmeict },
+];
+---
+
+<div id="home">
+  <Hero />
+
+  <main class="site-main">
+    <section class="site-section" id="about">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4 px-4">About</h1>
+        <p class="">
+          The primary objective of the Scilab GUI Hackathon is to empower participants to transform static Scilab scripts into interactive and user-friendly applications. The hackathon aims to encourage students, educators, researchers, and professionals to develop innovative GUI-based solutions using Scilab GUI tools.
+        </p>
+        <p class="section-copy text-justify leading-relaxed mt-4">
+          Through this hackathon, participants will gain hands-on experience in application development, problem solving, scientific computing, visualization, and open-source learning using Scilab.
+        </p>
+      </div>
+    </section>
+
+    <section class="site-section" id="date">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">Important Dates</h1>
+        <div class="overflow-x-auto">
+          <table class="modern-table mx-auto max-w-3xl text-center">
+            <thead>
+              <tr class="">
+                <th class="w-1/2 border border-gray-300 px-4 py-2">Event</th>
+                <th class="w-1/2 border border-gray-300 px-4 py-2">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {importantDates.map((item) => (
+                <tr>
+                  <td class="border border-gray-300 px-4 py-2">{item.event}</td>
+                  <td class="border border-gray-300 px-4 py-2">{item.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section" id="themes">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">Themes</h1>
+        <div class="modern-grid">
+          {themes.map((theme) => (
+            <article class="modern-card">
+              <h2 class="subsection-title font-bold text-lg">{theme.name}</h2>
+              <p class="mt-2 text-justify text-base">{theme.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section" id="important-note">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">Important Note</h1>
+        <div class="modern-grid">
+          <div class="modern-card">
+            <h2 class="subsection-title font-bold text-lg mb-2">Participants are encouraged to focus on</h2>
+            <ul class="modern-list">
+              {encouragedItems.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <div class="modern-card">
+            <h2 class="subsection-title font-bold text-lg mb-2">The following are discouraged</h2>
+            <ul class="modern-list">
+              {discouragedItems.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+        <p class="mt-5 text-justify">
+          The Spoken Tutorials already cover introductory calculator and plotting examples. Participants are encouraged to creatively extend these concepts and develop original applications.
+        </p>
+      </div>
+    </section>
+
+    <section class="site-section" id="submission">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">What Participants Must Submit</h1>
+        <ul class="modern-list two-column-list">
+          {deliverables.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="site-section" id="evaluation">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">Evaluation Criteria</h1>
+        <ul class="modern-list">
+          {evaluationCriteria.map((item) => <li>{item}</li>)}
+        </ul>
+        <p class="mt-4">Many other criteria may also be considered during the evaluation process.</p>
+      </div>
+    </section>
+
+    <section class="site-section" id="eligibility">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">Eligibility</h1>
+        <ul class="modern-list">
+          {eligibility.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="site-section" id="register">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">How to Participate</h1>
+        <div class="overflow-x-auto text-left">
+          <table class="modern-table text-left">
+            <thead>
+              <tr class="">
+                <th class="w-32 border border-gray-300 px-4 py-2">Step</th>
+                <th class="border border-gray-300 px-4 py-2">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {participationSteps.map((item) => (
+                <tr>
+                  <td class="border border-gray-300 px-4 py-2 font-semibold">{item.step}</td>
+                  <td class="border border-gray-300 px-4 py-2">
+                    {item.description}
+                    {item.link && (
+                      <a class="modern-link block mt-1 hover:underline" href={item.link} target="_blank" rel="noopener noreferrer">
+                        {item.link}
+                      </a>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section" id="rules">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">Rules and Regulations</h1>
+        <ul class="modern-list">
+          {rules.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="site-section" id="why-participate">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">Benefits of Participation</h1>
+        <ul class="modern-list">
+          {benefits.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="site-section" id="rewards">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">Rewards</h1>
+        <div class="overflow-x-auto">
+          <table class="modern-table text-left">
+            <thead>
+              <tr class="">
+                <th class="border border-gray-300 px-4 py-2">Prize Category</th>
+                <th class="border border-gray-300 px-4 py-2">Prize Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rewards.map((item) => (
+                <tr>
+                  <td class="border border-gray-300 px-4 py-2">{item.category}</td>
+                  <td class="border border-gray-300 px-4 py-2">{item.amount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">All winners will be awarded with a Certificate of Achievement.</p>
+      </div>
+    </section>
+
+    <section class="site-section" id="contact">
+      <div class="section-inner">
+        <h1 class="text-center section-title mx-4">Organisers</h1>
+        <div class="logo-strip">
+          {organizers.map((organizer) => (
+            <a href={organizer.href} target="_blank" rel="noopener noreferrer">
+              <img src={organizer.image.src} alt={organizer.name} class="logos" loading="lazy" />
+            </a>
+          ))}
+        </div>
+        <div class="mt-10">
+        <h1 class="section-title text-center">Contact Us</h1>
+        <p class="text-center text-xl">
+          For more information, email us at
+          <a href="mailto:contact@scilab.in" class="modern-link hover:underline">contact@scilab.in</a>
+        </p>
+        </div>
+      </div>
+    </section>
+  </main> 
+</div>
+
+<style>
+  .logos {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    max-height: 130px;
+  }
+</style>
