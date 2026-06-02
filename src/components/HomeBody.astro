@@ -313,12 +313,13 @@ const organizers = [
             <li class="participation-step">
               <article class="participation-card">
                 <div class="participation-card-top">
+                  <span class="participation-number" aria-label={item.step}>{index + 1}</span>
                   <span class="participation-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                       {participationStepIcons[item.icon].map((path) => <path d={path} />)}
                     </svg>
                   </span>
-                  <span class="participation-number" aria-label={item.step}>{index + 1}</span>
+                  
                 </div>
                 <h2 class="participation-title">{item.title}</h2>
                 <p class="participation-description">{item.description}</p>
