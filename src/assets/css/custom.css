@@ -171,6 +171,10 @@
 .modern-card h2,
 .subsection-title {
    color: var(--color-brand-cyan);
+   font-size: clamp(1.25rem, 2vw, 1.55rem);
+   line-height: 1.25;
+   font-weight: 700;
+   margin-bottom: 0.5rem;
 }
 
 .modern-list {
