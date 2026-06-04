@@ -12,30 +12,21 @@
   min-width: 0;
 }
 
-.participation-step:not(:last-child)::before,
 .participation-step:not(:last-child)::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.participation-step:not(:last-child)::before {
-  top: 4rem;
-  right: -1.55rem;
-  width: 1.15rem;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-brand-cyan), var(--color-brand-yellow));
-  box-shadow: 0 0 12px rgba(202, 255, 0, 0.55);
-}
-
 .participation-step:not(:last-child)::after {
-  top: 3.74rem;
-  right: -1.62rem;
-  width: 0.58rem;
-  height: 0.58rem;
-  border-top: 2px solid var(--color-brand-yellow);
-  border-right: 2px solid var(--color-brand-yellow);
-  transform: rotate(45deg);
+  z-index: 2;
+  top: 50%;
+  left: calc(100% + 1rem);
+  width: clamp(2rem, 3vw, 2rem);
+  aspect-ratio: 215 / 174;
+  background: url("../img/arrow.png") center / contain no-repeat;
+  filter: drop-shadow(0 0 10px rgba(202, 255, 0, 0.35));
+  transform: translate(-50%, -50%);
 }
 
 .participation-card {
@@ -152,22 +143,13 @@ html[data-section-theme="light"] .participation-number {
     margin-inline: auto;
   }
 
-  .participation-step:not(:last-child)::before {
-    top: auto;
-    right: auto;
-    bottom: -2rem;
-    left: 1.5rem;
-    width: 2px;
-    height: 1.35rem;
-    background: linear-gradient(180deg, var(--color-brand-cyan), var(--color-brand-yellow));
-  }
-
   .participation-step:not(:last-child)::after {
     top: auto;
     right: auto;
-    bottom: -2.08rem;
-    left: 1.24rem;
-    transform: rotate(135deg);
+    bottom: -1.2rem;
+    left: 50%;
+    width: 2.2rem;
+    transform: translate(-50%, 50%) rotate(90deg);
   }
 
   .participation-card {
