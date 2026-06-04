@@ -13,7 +13,7 @@
 
  body{
    margin: 0;
-   font-size: 1rem;
+   font-size: 1.4rem;
    line-height: 1.5;
    overflow-x: hidden;
    /* margin-bottom:30em; */
@@ -451,6 +451,6 @@ html[data-section-theme="light"] .resource-link:hover {
 
 @media  (min-width:1368px) {
    p, td, th, li{
-      font-size: 1rem;
+      font-size: 1.2rem;
    }
 }
