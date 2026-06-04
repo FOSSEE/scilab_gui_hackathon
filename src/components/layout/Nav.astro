@@ -1,5 +1,7 @@
 ---
 // import navLinks from "./nav-links.json";
+import iitb from "../../assets/img/IITB.png";
+import fossee from "../../assets/img/FOSSEE.png";
 
 const navLinks = [
   { "label": "About", "href": "/#about" },
@@ -8,7 +10,11 @@ const navLinks = [
   { "label": "Register", "href": "/#register" },
   { "label": "Rewards", "href": "/#rewards" },
   { "label": "Contact", "href": "/#contact" }
-]
+];
+const organizertop = [
+  { name: "IIT Bombay", href: "https://www.iitb.ac.in/", image: iitb },
+  { name: "FOSSEE", href: "https://fossee.in/", image: fossee }
+];
 ---
 
 <script>
@@ -96,15 +102,24 @@ function getStoredSectionTheme() {
   <div class="nav-shell flex flex-wrap items-center justify-between mx-auto">
     <a href="/" class="brand-link flex items-center space-x-3 rtl:space-x-reverse">
         <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="gui" /> -->
-        <span class="brand-mark">
+        <!-- <span class="brand-mark">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
           </svg>
-        </span>
-        <span class="brand-title">Scilab GUI</span>
+        </span> -->
+       
+        <!-- <span class="brand-title">Scilab GUI</span> -->
         
         <!-- <span class="typewriter self-center text-3xl font-extrabold whitespace-nowrap dark:text-white bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">GUI Competition</span> -->
     </a>
+     <div class="nav-logo-strip">
+         <!-- <div> -->
+          {organizertop.map((organizer) => (
+            <a href={organizer.href} target="_blank" rel="noopener noreferrer">
+              <img src={organizer.image.src} alt={organizer.name} class="logos" loading="lazy" />
+            </a>
+          ))}
+        </div>
     <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
       <ul class="nav-list font-medium mt-4 rounded-lg md:flex md:items-center md:mt-0">
         {
@@ -152,7 +167,7 @@ function getStoredSectionTheme() {
   }
 
   .nav-shell {
-    width: min(980px, calc(100% - 2rem));
+    width: min(1440px, calc(100% - 2rem));
     min-height: 4.35rem;
     padding: 0.72rem 0.9rem;
     border: 1px solid rgba(56, 213, 255, 0.2);
@@ -165,6 +180,7 @@ function getStoredSectionTheme() {
       inset 0 1px 0 rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(16px);
     pointer-events: auto;
+    transition: width 0.3 ease;
   }
 
   .brand-link {
@@ -311,5 +327,56 @@ function getStoredSectionTheme() {
       justify-content: center;
     }
   }
+  .nav-logo-strip {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 0.2rem;
+}
+
+.nav-logo-strip a {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 70px;
+   min-width: 120px;
+   /* border: 1px solid rgba(56, 213, 255, 0.16); */
+   border-radius: 8px;
+   /* background: var(--color-brand-white); */
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-logo-strip a:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
+}
+.nav-logo-strip {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.nav-logo-strip.hidden {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+.nav-shell.shrink-width{
+  width: min(980px, calc(100% - 2rem));
+  
+}
 </style>
  
+<script>
+ 
+  const logoStrip = document.querySelector(".nav-logo-strip");
+  const navLength = document.querySelector(".nav-shell");
+
+  window.addEventListener("scroll", () => {
+    logoStrip?.classList.toggle("hidden", window.scrollY+200 > window.innerHeight);
+    navLength?.classList.toggle("shrink-width", window.scrollY+200 > window.innerHeight)
+    console.log(window.innerHeight,window.scrollY );
+  });
+  
+  
+</script>

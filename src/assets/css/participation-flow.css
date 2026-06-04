@@ -43,7 +43,7 @@
   flex-direction: column;
   gap: 0.85rem;
   height: 100%;
-  min-height: 15rem;
+  min-height: 12rem;
   border: 1px solid rgba(56, 213, 255, 0.24);
   border-radius: 8px;
   background: linear-gradient(180deg, rgba(15, 32, 55, 0.92), rgba(8, 17, 31, 0.98));
@@ -90,7 +90,7 @@
 }
 
 .participation-title {
-  color: var(--color-brand-cyan);
+  color: var(--color-brand-yellow);
   font-size: 1.15rem;
   font-weight: 800;
   line-height: 1.2;

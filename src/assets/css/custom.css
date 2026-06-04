@@ -256,7 +256,7 @@
    min-width: 180px;
    border: 1px solid rgba(56, 213, 255, 0.16);
    border-radius: 8px;
-   background: var(--color-brand-white);
+   /* background: var(--color-brand-white); */
    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
