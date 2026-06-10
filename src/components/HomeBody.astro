@@ -7,10 +7,10 @@ import Nmeict from "../assets/img/NMEICT -logo.png";
 import Moe from "../assets/img/MOE-logo.png";
 
 const importantDates = [
-  { event: "Registration Opens", date: "01 June 2026" },
-  { event: "Hackathon Start Date", date: "01 July 2026" },
-  { event: "Submission Deadline", date: "31 July 2026" },
-  { event: "Results Announcement", date: "24 August 2026 (Tentative)" },
+  { event: "Registration Opens", date: "15 June 2026" },
+  { event: "Hackathon Start Date", date: "15 July 2026" },
+  { event: "Submission Deadline", date: "15 August 2026" },
+  { event: "Results Announcement", date: "31 August 2026 (Tentative)" },
 ];
 
 const themes = [
@@ -79,30 +79,90 @@ const eligibility = [
   "Basic understanding of programming and computational tools.",
 ];
 
-const participationSteps = [
+type ParticipationStepIcon = "register" | "learn" | "build" | "upload" | "submit";
+
+type ParticipationStep = {
+  step: string;
+  title: string;
+  icon: ParticipationStepIcon;
+  description: string;
+  link?: string;
+  linkLabel?: string;
+};
+
+const participationSteps: ParticipationStep[] = [
   {
     step: "Step 1",
-    description: "Register through the official Google Form. The link will be added soon.",
+    title: "Register",
+    icon: "register",
+    description: "Register through the official Google Form.",
+    link: "https://forms.gle/MLrGiE29JdBx6pHH8",
+    linkLabel: "Click here",
   },
   {
-    step: "Step 2",
+    step: "Step 2", 
+    title: "Learn GUI in Scilab using Spoken Tutorials",
+    icon: "learn",
     description: "Explore the Scilab GUI Spoken Tutorials and select a project idea.",
     link: "https://spoken-tutorial.org/tutorial-search/?search_foss=GUI+in+Scilab&search_language=English",
+    linkLabel: "Click here",
   },
   {
     step: "Step 3",
+    title: "Build your app",
+    icon: "build",
     description: "Develop the GUI application using Scilab.",
   },
   {
     step: "Step 4",
+    title: "Submit",
+    icon: "upload",
     description:
       "Upload the final project with all required deliverables to your drive link and keep access open.",
   },
   {
     step: "Step 5",
+    title: "Claim Your Rewards after review",
+    icon: "submit",
     description: "Submit before the deadline.",
   },
 ];
+
+// const participationStepIcons: Record<ParticipationStepIcon, string[]> = {
+//   register: [
+//     "M9 2h6",
+//     "M9 4h6",
+//     "M7 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2",
+//     "M8 11h8",
+//     "M8 15h5",
+//   ],
+//   learn: [
+//     "M4 19.5A2.5 2.5 0 0 1 6.5 17H20",
+//     "M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15Z",
+//     "M8 7h8",
+//     "M8 11h6",
+//   ],
+//   build: [
+//     "M12 3v4",
+//     "M12 17v4",
+//     "M4.22 5.22l2.83 2.83",
+//     "M16.95 16.95l2.83 2.83",
+//     "M3 12h4",
+//     "M17 12h4",
+//     "M4.22 18.78l2.83-2.83",
+//     "M16.95 7.05l2.83-2.83",
+//     "M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0Z",
+//   ],
+//   upload: [
+//     "M12 16V4",
+//     "M7 9l5-5l5 5",
+//     "M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2",
+//   ],
+//   submit: [
+//     "M21 3L10 14",
+//     "M21 3l-7 18l-4-7l-7-4l18-7Z",
+//   ],
+// };
 
 const rules = [
   "The application must use at least three distinct GUI components.",
@@ -122,17 +182,19 @@ const benefits = [
   "Internship opportunities may be offered with FOSSEE, IIT Bombay for exceptional participants",
 ];
 
-const rewards = [
-  { category: "First Prize", amount: "Rs. 10,000" },
-  { category: "Second Prize", amount: "Rs. 5,000" },
-  { category: "Third Prize", amount: "Rs. 3,500" },
-  { category: "Consolation Prize", amount: "Rs. 2,500" },
+type RewardMedal = "gold" | "silver" | "bronze" | "consolation";
+
+const rewards: Array<{ category: string; amount: string; medal: RewardMedal }> = [
+  { category: "First Prize", amount: "Rs. 8,000", medal: "gold" },
+  { category: "Second Prize", amount: "Rs. 5,000", medal: "silver" },
+  { category: "Third Prize", amount: "Rs. 3,500", medal: "bronze" },
+  // { category: "Consolation Prize", amount: "Rs. 2,500", medal: "consolation" },
 ];
 
 const organizers = [
   { name: "IIT Bombay", href: "https://www.iitb.ac.in/", image: iitb },
   { name: "FOSSEE", href: "https://fossee.in/", image: fossee },
-  { name: "Spoken Tutorial", href: "https://spoken-tutorial.org/", image: st },
+  // { name: "Spoken Tutorial", href: "https://spoken-tutorial.org/", image: st },
   { name: "Ministry of Education", href: "https://www.education.gov.in/", image: Moe },
   { name: "NMEICT", href: "https://www.education.gov.in/ict-initiatives", image: Nmeict },
 ];
@@ -145,8 +207,8 @@ const organizers = [
     <section class="site-section" id="about">
       <div class="section-inner">
         <h1 class="text-center section-title mx-4 px-4">About</h1>
-        <p class="">
-          The primary objective of the Scilab GUI Hackathon is to empower participants to transform static Scilab scripts into interactive and user-friendly applications. The hackathon aims to encourage students, educators, researchers, and professionals to develop innovative GUI-based solutions using Scilab GUI tools.
+        <p class="text-justify">
+       The primary objective of the Scilab GUIVerse Hackathon is to empower participants to transform static Scilab scripts into interactive and user-friendly applications. The hackathon aims to encourage students, educators, researchers, and professionals to develop innovative GUI-based solutions using Scilab GUI tools.
         </p>
         <p class="section-copy text-justify leading-relaxed mt-4">
           Through this hackathon, participants will gain hands-on experience in application development, problem solving, scientific computing, visualization, and open-source learning using Scilab.
@@ -246,31 +308,34 @@ const organizers = [
     <section class="site-section" id="register">
       <div class="section-inner">
         <h1 class="text-center section-title mx-4">How to Participate</h1>
-        <div class="overflow-x-auto text-left">
-          <table class="modern-table text-left">
-            <thead>
-              <tr class="">
-                <th class="w-32 border border-gray-300 px-4 py-2">Step</th>
-                <th class="border border-gray-300 px-4 py-2">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {participationSteps.map((item) => (
-                <tr>
-                  <td class="border border-gray-300 px-4 py-2 font-semibold">{item.step}</td>
-                  <td class="border border-gray-300 px-4 py-2">
-                    {item.description}
-                    {item.link && (
-                      <a class="modern-link block mt-1 hover:underline" href={item.link} target="_blank" rel="noopener noreferrer">
-                        {item.link}
-                      </a>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <ol class="participation-flow" aria-label="Participation steps">
+          {participationSteps.map((item, index) => (
+            <li class="participation-step">
+              <article class="participation-card">
+                <div class="participation-card-top">
+                  <span class="participation-number" aria-label={item.step}>{index + 1}</span>
+                  {/* <span class="participation-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      {participationStepIcons[item.icon].map((path) => <path d={path} />)}
+                    </svg>
+                  </span> */}
+                  
+                </div>
+                <h2 class="participation-title">{item.title}</h2>
+                {/* <p class="participation-description">{item.description}</p> */}
+                {item.link && (
+                  <a class="participation-link modern-link" href={item.link} target="_blank" rel="noopener noreferrer">
+                    <span>{item.linkLabel ?? item.link}</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M7 17L17 7" />
+                      <path d="M7 7h10v10" />
+                    </svg>
+                  </a>
+                )}
+              </article>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
 
@@ -293,7 +358,7 @@ const organizers = [
     </section>
 
     <section class="site-section" id="rewards">
-      <div class="section-inner">
+      <div class="section-inner mx-auto max-w-3xl">
         <h1 class="text-center section-title mx-4">Rewards</h1>
         <div class="overflow-x-auto">
           <table class="modern-table text-left">
@@ -306,8 +371,20 @@ const organizers = [
             <tbody>
               {rewards.map((item) => (
                 <tr>
-                  <td class="border border-gray-300 px-4 py-2">{item.category}</td>
-                  <td class="border border-gray-300 px-4 py-2">{item.amount}</td>
+                  <td class="border border-gray-300 px-4 py-2">
+                    <div class="reward-prize">
+                      <span class={`reward-medal reward-medal-${item.medal}`} aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                          <path class="reward-ribbon" d="M7 2h4l2 7l-4 2L7 2Z" />
+                          <path class="reward-ribbon" d="M17 2h-4l-2 7l4 2l2-9Z" />
+                          <circle class="reward-disc" cx="12" cy="14" r="6" />
+                          <path class="reward-star" d="M12 10.8l0.95 1.9l2.1 0.3l-1.52 1.48l0.36 2.08L12 15.58l-1.89 0.98l0.36-2.08L8.95 13l2.1-0.3L12 10.8Z" />
+                        </svg>
+                      </span>
+                      <span class="reward-category">{item.category}</span>
+                    </div>
+                  </td>
+                  <td class="border border-gray-300 px-4 py-2 reward-amount">{item.amount}</td>
                 </tr>
               ))}
             </tbody>
@@ -340,6 +417,88 @@ const organizers = [
 </div>
 
 <style>
+  .reward-prize {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-width: 0;
+  }
+
+  .reward-medal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.1rem;
+    height: 3.1rem;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: rgba(56, 213, 255, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  }
+
+  .reward-medal svg {
+    width: 2.3rem;
+    height: 2.3rem;
+    overflow: visible;
+  }
+
+  .reward-ribbon,
+  .reward-disc,
+  .reward-star {
+    stroke: currentColor;
+    stroke-width: 1.1;
+    stroke-linejoin: round;
+  }
+
+  .reward-ribbon {
+    fill: rgba(56, 213, 255, 0.34);
+  }
+
+  .reward-disc {
+    fill: currentColor;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.24));
+  }
+
+  .reward-star {
+    fill: var(--color-brand-bg);
+    stroke: rgba(255, 255, 255, 0.78);
+    stroke-width: 0.45;
+  }
+
+  .reward-medal-gold {
+    color: #ffd76a;
+    background: rgba(255, 215, 106, 0.12);
+  }
+
+  .reward-medal-silver {
+    color: #d8e4f2;
+    background: rgba(216, 228, 242, 0.12);
+  }
+
+  .reward-medal-bronze {
+    color: #d59a63;
+    background: rgba(213, 154, 99, 0.14);
+  }
+
+  .reward-medal-consolation {
+    color: var(--color-brand-cyan);
+    background: rgba(56, 213, 255, 0.12);
+  }
+
+  .reward-category,
+  .reward-amount {
+    font-weight: 800;
+  }
+
+  :global(html[data-section-theme="light"]) .reward-medal {
+    box-shadow: inset 0 0 0 1px rgba(6, 58, 93, 0.12), 0 10px 24px rgba(12, 35, 60, 0.08);
+  }
+
+  :global(html[data-section-theme="light"]) .reward-star {
+    fill: var(--color-section-light-surface);
+    stroke: rgba(6, 58, 93, 0.28);
+  }
+
   .logos {
     width: 150px;
     height: 100px;

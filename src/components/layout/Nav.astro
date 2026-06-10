@@ -1,5 +1,7 @@
 ---
 // import navLinks from "./nav-links.json";
+import iitb from "../../assets/img/IITB.png";
+import fossee from "../../assets/img/FOSSEE.png";
 
 const navLinks = [
   { "label": "About", "href": "/#about" },
@@ -8,7 +10,11 @@ const navLinks = [
   { "label": "Register", "href": "/#register" },
   { "label": "Rewards", "href": "/#rewards" },
   { "label": "Contact", "href": "/#contact" }
-]
+];
+const organizertop = [
+  { name: "IIT Bombay", href: "https://www.iitb.ac.in/", image: iitb },
+  { name: "FOSSEE", href: "https://fossee.in/", image: fossee }
+];
 ---
 
 <script>
@@ -51,7 +57,7 @@ function initSectionTheme() {
   if (!button) return;
 
   var storedTheme = getStoredSectionTheme();
-  var initialTheme: "light" | "dark" = storedTheme === 'light' ? 'light' : 'dark';
+  var initialTheme: "light" | "dark" = storedTheme === 'dark' ? 'dark' : 'light';
 
   setSectionTheme(initialTheme);
 
@@ -101,10 +107,19 @@ function getStoredSectionTheme() {
             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
           </svg>
         </span>
-        <span class="brand-title">Scilab GUI</span>
+       
+        <!-- <span class="brand-title">Scilab GUI</span> -->
         
         <!-- <span class="typewriter self-center text-3xl font-extrabold whitespace-nowrap dark:text-white bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">GUI Competition</span> -->
     </a>
+     <!-- <div class="nav-logo-strip">
+        
+          {organizertop.map((organizer) => (
+            <a href={organizer.href} target="_blank" rel="noopener noreferrer">
+              <img src={organizer.image.src} alt={organizer.name} class="logos" loading="lazy" />
+            </a>
+          ))}
+        </div> -->
     <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
       <ul class="nav-list font-medium mt-4 rounded-lg md:flex md:items-center md:mt-0">
         {
@@ -121,7 +136,7 @@ function getStoredSectionTheme() {
       </ul>
     </div>
     <div class="nav-actions">
-      <button data-section-theme-toggle type="button" class="theme-toggle" aria-pressed="false" aria-label="Switch section content to light mode" data-theme-state="dark">
+      <button data-section-theme-toggle type="button" class="theme-toggle" aria-pressed="true" aria-label="Switch section content to dark mode" data-theme-state="light">
         <svg class="theme-toggle-icon theme-toggle-icon-light" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 9c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm0-2c-2.762 0-5 2.238-5 5s2.238 5 5 5 5-2.238 5-5-2.238-5-5-5zm-4.184-.599l-3.593-3.594-1.415 1.414 3.595 3.595c.401-.537.876-1.013 1.413-1.415zm4.184-1.401c.34 0 .672.033 1 .08v-5.08h-2v5.08c.328-.047.66-.08 1-.08zm5.598 2.815l3.595-3.595-1.414-1.414-3.595 3.595c.537.402 1.012.878 1.414 1.414zm-12.598 4.185c0-.34.033-.672.08-1h-5.08v2h5.08c-.047-.328-.08-.66-.08-1zm11.185 5.598l3.594 3.593 1.415-1.414-3.594-3.593c-.403.536-.879 1.012-1.415 1.414zm-9.784-1.414l-3.593 3.593 1.414 1.414 3.593-3.593c-.536-.402-1.011-.877-1.414-1.414zm12.519-5.184c.047.328.08.66.08 1s-.033.672-.08 1h5.08v-2h-5.08zm-6.92 8c-.34 0-.672-.033-1-.08v5.08h2v-5.08c-.328.047-.66.08-1 .08z" fill="currentColor"></path>
         </svg>
@@ -152,7 +167,7 @@ function getStoredSectionTheme() {
   }
 
   .nav-shell {
-    width: min(980px, calc(100% - 2rem));
+    width: min(982px, calc(100% - 2rem));
     min-height: 4.35rem;
     padding: 0.72rem 0.9rem;
     border: 1px solid rgba(56, 213, 255, 0.2);
@@ -165,6 +180,7 @@ function getStoredSectionTheme() {
       inset 0 1px 0 rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(16px);
     pointer-events: auto;
+    transition: all 0.8s ease;
   }
 
   .brand-link {
@@ -311,5 +327,56 @@ function getStoredSectionTheme() {
       justify-content: center;
     }
   }
+  .nav-logo-strip {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 0.2rem;
+}
+
+.nav-logo-strip a {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 70px;
+   min-width: 120px;
+   /* border: 1px solid rgba(56, 213, 255, 0.16); */
+   border-radius: 8px;
+   /* background: var(--color-brand-white); */
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-logo-strip a:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
+}
+.nav-logo-strip {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.nav-logo-strip.hidden {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+.nav-shell.shrink-width{
+  width: min(980px, calc(100% - 2rem));
+  
+}
 </style>
  
+<script>
+ 
+  const logoStrip = document.querySelector(".nav-logo-strip");
+  const navLength = document.querySelector(".nav-shell");
+
+  window.addEventListener("scroll", () => {
+    logoStrip?.classList.toggle("hidden", window.scrollY+200 > window.innerHeight);
+    navLength?.classList.toggle("shrink-width", window.scrollY+200 > window.innerHeight)
+    console.log(window.innerHeight,window.scrollY );
+  });
+  
+  
+</script>
