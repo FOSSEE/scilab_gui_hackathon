@@ -24,3 +24,31 @@
 #       - name: Create folder
 #         run: |
 #           mkdir -p /home/github/scilab-hackathon.fossee.in/prod && cp -R dist /home/github/scilab-hackathon.fossee.in/prod
+
+name: Deploy to Scilab Hackathon 2026 site
+
+on:
+  # Trigger the workflow every time you push to the `master` branch
+  # Using a different branch name? Replace `master` with your branch’s name
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: scilabhackathon2026
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
+      - name: Create folder
+        run: |
+          mkdir -p /home/github/Assets/scilabhackathon2026.fossee.in/prod && cp -R dist /home/github/Assets/scilabhackathon2026.fossee.in/prod
