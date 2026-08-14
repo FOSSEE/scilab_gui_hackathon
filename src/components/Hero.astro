@@ -42,19 +42,6 @@
 </section>
 
 <style>
-.updated-date {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
- color: var(--color-brand-white);
-}
-
-.new-icon {
-  display: inline-block;
-  width: auto;
-  height: 25px;
-}
-
 .hero {
   position: relative;
   min-height: 90vh;
@@ -215,7 +202,19 @@ html[data-section-theme="dark"] .overlay{
     margin-top: 0.65rem;
   }
 }
+/**new icon for highlighter**/
+.dates .updated-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+ color: var(--color-brand-white);
+}
 
+.new-icon {
+  display: inline-block;
+  width: auto;
+  height: 25px;
+}
 </style>
 <script is:inline>
   const video = document.getElementById("heroVideo");
