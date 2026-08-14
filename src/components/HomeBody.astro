@@ -9,7 +9,7 @@ import Moe from "../assets/img/MOE-logo.png";
 const importantDates = [
   { event: "Registration Opens", date: "15 June 2026" },
   { event: "Hackathon Start Date", date: "15 July 2026" },
-  { event: "Submission Deadline", date: "23 August 2026" },
+  { event: "Submission Deadline", date: "23 August 2026" , isNew: true},
   { event: "Results Announcement", date: "31 August 2026 (Tentative)" },
 ];
 
@@ -234,7 +234,15 @@ const organizers = [
               {importantDates.map((item) => (
                 <tr>
                   <td class="border border-gray-300 px-4 py-2">{item.event}</td>
-                  <td class="border border-gray-300 px-4 py-2">{item.date}</td>
+                  <td class="border border-gray-300 px-4 py-2">{item.date}
+{item.isNew && (
+  <img
+    src="https://static.fossee.in/fossee/Icons/new.gif"
+    alt="New"
+    class="new-icon"
+  />
+)}
+</td>
                 </tr>
               ))}
             </tbody>
@@ -420,6 +428,18 @@ const organizers = [
 </div>
 
 <style>
+.updated-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.new-icon {
+  display: inline-block;
+  width: auto;
+  height: 30px;
+}
+
   .reward-prize {
     display: flex;
     align-items: center;

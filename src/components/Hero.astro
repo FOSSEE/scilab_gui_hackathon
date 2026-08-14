@@ -23,7 +23,14 @@
     <p class="dates">
       <span>Registration:</span> 15 June 2026
       <span class="divider">|</span>
-      <span>Hackathon:</span> 15 July 2026 - 23 August 2026
+      <span>Hackathon:</span> 15 July 2026 - <span class="updated-date">
+    23 August 2026
+    <img
+      src="https://static.fossee.in/fossee/Icons/new.gif"
+      alt="New"
+      class="new-icon"
+    />
+  </span>
     </p>
     <p class="benefits">Cash prizes, eCertificate and internship opportunities</p>
     <a class="register-link" href="#register">Register</a>
@@ -35,7 +42,6 @@
 </section>
 
 <style>
-
 .hero {
   position: relative;
   min-height: 90vh;
@@ -196,7 +202,19 @@ html[data-section-theme="dark"] .overlay{
     margin-top: 0.65rem;
   }
 }
+/**new icon for highlighter**/
+.dates .updated-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+ color: var(--color-brand-white);
+}
 
+.new-icon {
+  display: inline-block;
+  width: auto;
+  height: 25px;
+}
 </style>
 <script is:inline>
   const video = document.getElementById("heroVideo");
