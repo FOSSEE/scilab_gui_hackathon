@@ -1,16 +1,25 @@
 ---
-
+import '../assets/css/custom.css';
 ---
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
     <title>Congratulations</title>
+      <script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js">
+</script>
+    <script is:inline>
+      try {
+        document.documentElement.dataset.sectionTheme =
+          localStorage.getItem('section-theme') === 'dark' ? 'dark' : 'light';
+      } catch {
+        document.documentElement.dataset.sectionTheme = 'light';
+      }
+    </script>
     <style>
-body{
-color: #f50000;
-background: #000000;
-background: linear-gradient(180deg,rgba(0, 0, 0, 1) 31%, rgba(255, 0, 0, 1) 88%);
-}
       .center-container {
         height: 100vh;
         display: flex;
@@ -21,42 +30,6 @@ background: linear-gradient(180deg,rgba(0, 0, 0, 1) 31%, rgba(255, 0, 0, 1) 88%)
 
       }
 
-     /* .fancy-button {
-        padding: 14px 28px;
-        font-size: 18px;
-        font-weight: 600;
-        color: white;
-        background: linear-gradient(135deg, #6366f1, #4f46e5);
-        border: none;
-        border-radius: 12px;
-        box-shadow: 0 8px 16px rgba(79, 70, 229, 0.3);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .fancy-button:hover {
-        background: linear-gradient(135deg, #4338ca, #3730a3);
-        box-shadow: 0 10px 20px rgba(67, 56, 202, 0.4);
-        transform: translateY(-2px);
-      }
-    .btn {
-      background-color: white;
-      color: red;
-      padding: 1rem 2.5rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: scale(2);
-      background-color: #ffe6e6;
-    }*/
     *,
     *::before,
     *::after {
@@ -68,14 +41,24 @@ background: linear-gradient(180deg,rgba(0, 0, 0, 1) 31%, rgba(255, 0, 0, 1) 88%)
       margin: 0;
       display: grid;
       place-items: center;
-      background: #101120;
-      font-family: "Balsamiq Sans", cursive;
-      color: #f50000;
+      --announcement-accent: var(--color-brand-yellow);
+      --announcement-heading: var(--color-brand-yellow);
+      background: radial-gradient(ellipse at bottom, var(--color-brand-surface-alt), var(--color-brand-bg));
+      font-family: "Nunito Sans", sans-serif;
+      color: var(--color-brand-text);
       text-align: center;
       padding: 2rem;
     }
 
+    /* :global(html[data-section-theme="light"]) body {
+      --announcement-accent: var(--color-brand-cyan-dark);
+      --announcement-heading: var(--color-section-light-heading);
+      background: radial-gradient(ellipse at bottom, var(--color-section-light-surface-alt), var(--color-section-light-bg));
+      color: var(--color-section-light-text);
+    } */
+
     h1 {
+      color: var(--announcement-heading);
       font-size: 4rem;
       margin-bottom: 1rem;
     }
@@ -89,17 +72,17 @@ background: linear-gradient(180deg,rgba(0, 0, 0, 1) 31%, rgba(255, 0, 0, 1) 88%)
       font-size: 2rem;
       display: inline-block;
       cursor: pointer;
-      color: #f50000;
+      color: var(--announcement-accent);
       background: transparent;
-      border: #f50000 0.125em solid;
+      border: var(--announcement-accent) 0.125em solid;
       padding: 0.5em 1.5em;
       border-radius: 0.25em;
       text-shadow: 
         0 0 0.125em rgba(255, 255, 255, 0.3),
-        0 0 0.45em #f50000;
+        0 0 0.45em var(--announcement-accent);
       box-shadow: 
-        inset 0 0 0.5em 0 #f50000,
-        0 0 0.5em 0 #f50000;
+        inset 0 0 0.5em 0 var(--announcement-accent),
+        0 0 0.5em 0 var(--announcement-accent);
       position: relative;
       transition: all 0.3s ease;
     }
@@ -108,7 +91,7 @@ background: linear-gradient(180deg,rgba(0, 0, 0, 1) 31%, rgba(255, 0, 0, 1) 88%)
       pointer-events: none;
       content: "";
       position: absolute;
-      background: #f50000;
+      background: var(--announcement-accent);
       top: 120%;
       left: 0;
       width: 100%;
@@ -125,18 +108,23 @@ background: linear-gradient(180deg,rgba(0, 0, 0, 1) 31%, rgba(255, 0, 0, 1) 88%)
       bottom: 0;
       left: 0;
       right: 0;
-      box-shadow: 0 0 2em 0.5em #f50000;
+      box-shadow: 0 0 2em 0.5em var(--announcement-accent);
       opacity: 0;
-      background-color: #f50000;
+      background-color: var(--announcement-accent);
       z-index: -1;
       transition: opacity 100ms linear;
     }
 
     .neon-button:hover,
     .neon-button:focus {
-      color: #101120;
-      background-color: #f50000;
+      color: var(--color-brand-ink);
+      background-color: var(--color-brand-yellow);
       text-shadow: none;
+    }
+
+    .neon-button:focus-visible {
+      outline: 3px solid var(--announcement-accent);
+      outline-offset: 6px;
     }
 
     .neon-button:hover::before,
@@ -153,28 +141,79 @@ background: linear-gradient(180deg,rgba(0, 0, 0, 1) 31%, rgba(255, 0, 0, 1) 88%)
 <body>
 
     <div class="center-container">
-<h1>Scilab Case Study Hackathon 2025 Result</h1>
+<h1>Scilab GUI Hackathon 2026 Result</h1>
 <br><p>&nbsp;</p>
       <button class="neon-button btn" onclick="startCountdown(this)">
-        🎉 Congratulations
+        📢 Reveal Results
       </button>
 <p>&nbsp;</p>
     </div>
 
-	    <script is:inline type="text/javascript">
-      function startCountdown(button) {
-        button.disabled = true;
-        let countdown = 3;
+	  <script is:inline type="text/javascript">
+  function startCountdown(button) {
+    button.disabled = true;
 
-        const interval = setInterval(() => {
-          if (countdown > 0) {
-            button.textContent = `📢 Result announcement in ${countdown--}s...`;
-          } else {
-            clearInterval(interval);
-            window.location.href = '/results'; 
-          }
-        }, 1000);
+    let countdown = 3;
+
+    // Show 3 immediately
+    button.textContent = `📢 Result announcement in ${countdown}s...`;
+
+    const interval = setInterval(() => {
+      countdown--;
+
+      if (countdown > 0) {
+        button.textContent = `📢 Result announcement in ${countdown}s...`;
+      } else {
+        clearInterval(interval);
+
+        button.textContent = '🎉 Congratulations!';
+
+        celebrate();
+
+        // Wait for confetti animation, then open results
+        setTimeout(() => {
+          window.location.href = '/results';
+        }, 2500);
       }
-    </script>
+    }, 1000);
+  }
+
+  function celebrate() {
+    // Main center burst
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      startVelocity: 45,
+      origin: {
+        x: 0.5,
+        y: 0.6
+      }
+    });
+
+    // Left side
+    setTimeout(() => {
+      confetti({
+        particleCount: 80,
+        angle: 60,
+        spread: 65,
+        origin: {
+          x: 0,
+          y: 0.7
+        }
+      });
+
+      // Right side
+      confetti({
+        particleCount: 80,
+        angle: 120,
+        spread: 65,
+        origin: {
+          x: 1,
+          y: 0.7
+        }
+      });
+    }, 300);
+  }
+</script>
   </body>
 </html>
