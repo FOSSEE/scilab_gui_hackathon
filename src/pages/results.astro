@@ -11,11 +11,15 @@ const sheets = workbook.SheetNames
   .map(name => ({ name, rows: resultRows(workbook.Sheets[name]) }));
 ---
 <Layout title="Scilab Case Study Hackathon">
+
 <div class="curtain left-curtain"></div>
 <div class="curtain right-curtain"></div>
-<main class="site-main results-page hidden" id="main-content">
+
+<main class="site-main results-page is-concealed" id="main-content">
+  <!-- <div></div> -->
 <div class="section-inner">
 <h1 class="text-center section-title" id="results">Results</h1>
+
 <div class="tabs" aria-label="Result worksheets">
   {sheets.map((sheet, index) => (
     <button type="button" class:list={['tab', { active: index === 0 }]}
@@ -56,10 +60,18 @@ const sheets = workbook.SheetNames
 </main>
 </Layout>
 <style>
-  .hidden { display: none; }
+  .results-page {
+  opacity: 1;
+  transition: opacity 3s ease;
+}
+
+.results-page.is-concealed {
+  opacity: 0;
+  visibility: hidden;
+}
 
   .results-page {
-    --results-surface: var(--color-brand-surface);
+            --results-surface: var(--color-brand-surface);
     --results-border: var(--color-brand-border);
     --results-accent: var(--color-brand-cyan);
     min-height: 75vh;
@@ -151,7 +163,7 @@ const sheets = workbook.SheetNames
       height: 100%;
       background-size: cover;
       background-repeat: no-repeat;
-      z-index: 10;
+      z-index: 1000;
       transition: transform 4.5s ease-in-out;
     }
 
@@ -198,7 +210,7 @@ const sheets = workbook.SheetNames
 
     // Show the content after the curtain animation (4.5s)
     setTimeout(() => {
-      content.classList.remove('hidden');
+     content.classList.remove('is-concealed');
     }, 500);
   }
 });
