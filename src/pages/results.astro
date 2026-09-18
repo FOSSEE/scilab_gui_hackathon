@@ -48,9 +48,9 @@ const sheets = workbook.SheetNames
           </table>
         </div>
       ) : <p>No results in this worksheet yet.</p>}
-      {sheet.name.trim().toLowerCase() === 'good submissions' && (
+      {/* {sheet.name.trim().toLowerCase() === 'good submissions' && (
         <p class="text-lg mt-4"><mark>Note: A certificate of appreciation will be given to all the Good submissions.</mark></p>
-      )}
+      )} */}
     </div>
   ))}
   {sheets.length === 0 && <p>No visible result worksheets found.</p>}
@@ -137,6 +137,17 @@ const sheets = workbook.SheetNames
     /* overflow-wrap: break-word; */
     vertical-align: top;
     min-width: 7rem;
+  }
+
+  /* Results only: retain the shared horizontal rules and add column dividers. */
+  .modern-table th,
+  .modern-table td {
+    border-right: 1px solid var(--results-border);
+  }
+
+  .modern-table th:last-child,
+  .modern-table td:last-child {
+    border-right: 0;
   }
 
   td[rowspan]:not([rowspan="1"]) { vertical-align: middle; }
