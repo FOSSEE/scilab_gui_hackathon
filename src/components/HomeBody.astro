@@ -6,11 +6,12 @@ import st from "../assets/img/spoken.png";
 import Nmeict from "../assets/img/NMEICT -logo.png";
 import Moe from "../assets/img/MOE-logo.png";
 
+//add ", isNew:true " for blinking new gif in dates
 const importantDates = [
   { event: "Registration Opens", date: "15 June 2026" },
   { event: "Hackathon Start Date", date: "15 July 2026" },
   { event: "Submission Deadline", date: "20 August 2026"},
-  { event: "Results Announcement", date: "18 September 2026", isNew:true },
+  { event: "Results Announcement", date: "18 September 2026"},
 ];
 
 const themes = [
@@ -189,8 +190,8 @@ type RewardMedal = "gold" | "silver" | "bronze" | "consolation";
 
 const rewards: Array<{ category: string; amount: string; medal: RewardMedal }> = [
   { category: "First Prize", amount: "Rs. 8,000", medal: "gold" },
-  { category: "Second Prize", amount: "Rs. 5,000", medal: "silver" },
-  { category: "Third Prize", amount: "Rs. 3,500", medal: "bronze" },
+  { category: "Second Prize", amount: "Rs. 6,000", medal: "silver" },
+  { category: "Third Prize", amount: "Rs. 4,000", medal: "bronze" },
   // { category: "Consolation Prize", amount: "Rs. 2,500", medal: "consolation" },
 ];
 
@@ -235,13 +236,13 @@ const organizers = [
                 <tr>
                   <td class="border border-gray-300 px-4 py-2">{item.event}</td>
                   <td class="border border-gray-300 px-4 py-2">{item.date}
-{item.isNew && (
+{/* {item.isNew && (
   <img
     src="https://static.fossee.in/fossee/Icons/new.gif"
     alt="New"
     class="new-icon"
   />
-)}
+)} */}
 </td>
                 </tr>
               ))}
@@ -249,7 +250,7 @@ const organizers = [
           </table>
         </div>
         <!-- Results Announcement -->
-    <aside
+    <!-- <aside
       class="announcement mx-auto mt-6 max-w-3xl text-left md:text-justify text-base md:text-lg"
       aria-label="Hackathon results announcement"
     >
@@ -273,7 +274,7 @@ const organizers = [
       <p>
         Thank you for your patience, enthusiasm, and participation!
       </p>
-    </aside>
+    </aside> -->
   </div>
 </section>
 
